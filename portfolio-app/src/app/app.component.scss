@@ -1,0 +1,33 @@
+.container {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  #back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: linear-gradient(135deg, #b91c1c, #7f1d1d);
+    color: white;
+    padding: 12px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    display: none;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    transition: all 0.3s;
+  
+    &:hover {
+      background: linear-gradient(135deg, #7f1d1d, #5a1a1a);
+      transform: translateY(-2px);
+    }
+  
+    &:focus {
+      outline: 2px solid #fff;
+      outline-offset: 2px;
+    }
+  }

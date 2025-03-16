@@ -1,0 +1,21 @@
+.skills-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+
+  li {
+    background-color: #fff1f1; /* Jasnoczerwone tło */
+    color: #b91c1c; /* Krwisty czerwony */
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 0.95em;
+    font-weight: 600;
+    margin-bottom: 8px; /* Odstęp między liniami */
+    transition: all 0.3s;
+
+    &:hover {
+      transform: translateY(-2px);
+      background-color: #fed7d7;
+    }
+  }
+}

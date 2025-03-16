@@ -1,0 +1,20 @@
+.projects-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  
+    li {
+      background-color: #fff1f1;
+      color: #b91c1c;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 0.95em;
+      font-weight: 600;
+      transition: all 0.3s;
+  
+      &:hover {
+        transform: translateY(-2px);
+        background-color: #fed7d7;
+      }
+    }
+}
