@@ -37,9 +37,8 @@
                 "glob": "**/*",
                 "input": "public"
               },
-              "src/assets/skills.json",
-              "src/assets/Mariusz Kraszewski_pl.pdf",
-              "src/assets/Mariusz Kraszewski_pl.docx"
+              "src/assets",
+              "src/favicon.ico"
             ],
             "styles": [
               "src/styles.scss"
@@ -105,6 +104,9 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy"
         }
       }
     }

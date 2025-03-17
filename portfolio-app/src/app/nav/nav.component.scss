@@ -1,54 +1,83 @@
 .nav {
-    background-color: #fff;
-    padding: 12px;
-    border-radius: 12px;
-    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
-    position: sticky;
-    top: 10px;
-    z-index: 10;
-  
-    ul {
-      list-style-type: none;
-      padding: 0;
-      display: flex;
-      justify-content: space-around;
-      margin: 0;
-    }
-  
-    a {
-      text-decoration: none;
-      color: #b91c1c;
-      font-weight: 600;
-      padding: 12px;
-      border-radius: 10px;
-      transition: all 0.3s;
-      font-size: 0.95em;
-      text-align: center;
-      flex-grow: 1;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-  
-      i {
-        margin-bottom: 6px;
-        font-size: 1.2em;
-      }
-  
-      &:hover, &.active {
-        background-color: #fff1f1;
-        color: #7f1d1d;
-      }
-  
-      &:focus {
-        outline: 2px solid #b91c1c;
-        outline-offset: 2px;
-      }
-    }
-  
-    @media (max-width: 600px) {
+  background-color: #fff;
+  padding: 12px 24px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+
+  .hamburger {
+    display: none; /* Ukryty na desktopie */
+    background: none;
+    border: none;
+    font-size: 1.5em;
+    color: #b91c1c;
+    cursor: pointer;
+    padding: 5px;
+  }
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+
+    li {
       a {
-        padding: 10px;
-        font-size: 0.9em;
+        text-decoration: none;
+        color: #b91c1c;
+        font-weight: 600;
+        padding: 12px;
+        border-radius: 10px;
+        transition: all 0.3s;
+        display: flex;
+        align-items: center;
+
+        i {
+          margin-right: 8px;
+        }
+
+        &.active {
+          background-color: #fed7d7;
+          color: #7f1d1d;
+        }
+
+        &:hover {
+          background-color: #fff1f1;
+        }
       }
     }
   }
+
+  /* Styl dla urządzeń mobilnych */
+  @media (max-width: 768px) {
+    .hamburger {
+      display: block; /* Pokazujemy hamburger na mobile */
+    }
+
+    ul {
+      display: none; /* Ukrywamy menu domyślnie */
+      flex-direction: column;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background-color: #fff;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+
+      &.open {
+        display: flex; /* Pokazujemy po kliknięciu hamburgera */
+      }
+
+      li {
+        a {
+          padding: 15px;
+          border-bottom: 1px solid #eee;
+
+          &:last-child {
+            border-bottom: none;
+          }
+        }
+      }
+    }
+  }
+}
