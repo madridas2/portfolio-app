@@ -38,9 +38,6 @@
                 "input": "public"
               },
               "src/assets",
-              "src/assets/skills.json",
-              "src/assets/Mariusz Kraszewski_pl.pdf",
-              "src/assets/Mariusz Kraszewski_pl.docx",
               "src/favicon.ico"
             ],
             "styles": [

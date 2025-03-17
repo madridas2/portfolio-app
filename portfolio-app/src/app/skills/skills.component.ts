@@ -11,7 +11,7 @@ export class SkillsComponent implements AfterViewInit {
   skills: string[] = [];
 
   async ngAfterViewInit() {
-    const response = await fetch('/../../assets/skills.json');
+    const response = await fetch('./assets/skills.json');
     this.skills = await response.json();
 
     this.section.nativeElement.animate(
