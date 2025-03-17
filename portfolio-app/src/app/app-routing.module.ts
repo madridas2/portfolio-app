@@ -11,8 +11,7 @@ const routes: Routes = [
   { path: 'projects', component: AppComponent },
   { path: 'contact', component: AppComponent },
   { path: 'tech-spotlight', component: AppComponent },
-  { path: 'header', component: AppComponent },
-  { path: '**', redirectTo: 'header', pathMatch: 'full' }
+  { path: '**', redirectTo: '', pathMatch: 'full' }
 
 ];
 
