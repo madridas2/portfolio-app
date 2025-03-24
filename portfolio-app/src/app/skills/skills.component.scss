@@ -1,16 +1,41 @@
+.section {
+  position: relative;
+  padding: 20px;
+  overflow: hidden;
+
+  &::before {
+    content: "Code Matters";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+    font-size: 5em;
+    font-weight: 700;
+    color: rgba(185, 28, 28, 0.1);
+    opacity: 0.2;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  > * {
+    position: relative;
+    z-index: 1;
+  }
+}
+
 .skills-list {
   list-style-type: none;
   padding: 0;
   margin: 0;
 
   li {
-    background-color: #fff1f1; /* Jasnoczerwone tło */
-    color: #b91c1c; /* Krwisty czerwony */
+    background-color: #fff1f1;
+    color: #b91c1c;
     padding: 8px 16px;
     border-radius: 8px;
     font-size: 0.95em;
     font-weight: 600;
-    margin-bottom: 8px; /* Odstęp między liniami */
+    margin-bottom: 8px;
     transition: all 0.3s;
 
     &:hover {

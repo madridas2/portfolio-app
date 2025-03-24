@@ -1,41 +1,126 @@
-.download-buttons {
-    display: flex;
-    gap: 12px;
-    margin-top: 20px;
-    flex-wrap: wrap;
-    justify-content: center;
+.section {
+  position: relative;
+  padding: 20px;
+  overflow: hidden;
+
+  &::before {
+    content: "Connect IT";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+    font-size: 6em;
+    font-weight: 800;
+    color: rgba(185, 28, 28, 0.3);
+    opacity: 0.4;
+    pointer-events: none;
+    z-index: 0;
+    text-transform: uppercase;
   }
-  
-  .download-btn {
-    background: linear-gradient(135deg, #b91c1c, #7f1d1d);
-    color: white;
-    padding: 12px 24px;
-    border-radius: 10px;
+
+  > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Style dla paragrafu z ikonami */
+  p {
+    line-height: 1.6; /* Większy odstęp między liniami */
+
+    i {
+      color: #b91c1c; /* Krwisty czerwony */
+      margin-right: 8px; /* Odstęp między ikoną a tekstem */
+      font-size: 1.2em; /* Nieco większa ikona */
+      vertical-align: middle; /* Wyrównanie z tekstem */
+      transition: color 0.3s ease;
+    }
+
+    /* Efekt hover dla ikon obok linków */
+    &:hover i {
+      color: #7f1d1d; /* Ciemniejszy czerwony przy najechaniu */
+    }
+  }
+
+  /* Style dla linku LinkedIn */
+  a:not(.download-btn) {
+    color: #b91c1c;
     text-decoration: none;
     font-weight: 600;
-    font-size: 0.95em;
-    transition: all 0.3s;
-    display: inline-flex;
-    align-items: center;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-  
-    i {
-      margin-right: 8px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    position: relative;
+    transition: all 0.3s ease;
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: #7f1d1d;
+      transition: width 0.3s ease;
     }
-  
+
     &:hover {
-      transform: translateY(-2px);
-      background: linear-gradient(135deg, #7f1d1d, #5a1a1a);
-      box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+      background-color: #fff1f1;
+      color: #7f1d1d;
+      transform: translateY(-1px);
+      &::after {
+        width: 100%;
+      }
     }
-  
+
     &:focus {
-      outline: 2px solid #fff;
-      outline-offset: 2px;
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(185, 28, 28, 0.3);
     }
-  
-    @media (max-width: 600px) {
-      padding: 10px 20px;
-      font-size: 0.9em;
+
+    &:active {
+      transform: translateY(0);
+      background-color: #fed7d7;
     }
   }
+
+  .download-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    .download-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8px 16px;
+      background: linear-gradient(135deg, #b91c1c, #7f1d1d);
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+
+      i {
+        margin-right: 6px;
+      }
+
+      &:hover {
+        background: linear-gradient(135deg, #7f1d1d, #5a1a1a);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      }
+
+      &:focus {
+        outline: none;
+        box-shadow: 0 0 0 3px rgba(185, 28, 28, 0.5);
+      }
+
+      &:active {
+        transform: translateY(0);
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      }
+    }
+  }
+}

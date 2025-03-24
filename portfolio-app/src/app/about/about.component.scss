@@ -1,0 +1,25 @@
+.section {
+    position: relative;
+    padding: 20px;
+    overflow: hidden; /* Zapobiega wychodzeniu znaku wodnego poza sekcję */
+  
+    &::before {
+      content: "C# Powered"; /* Tekst znaku wodnego */
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(-45deg); /* Przekrzywiony o 45 stopni */
+      font-size: 5em; /* Duży rozmiar */
+      font-weight: 700;
+      color: rgba(185, 28, 28, 0.1); /* Krwisty czerwony z niską przezroczystością */
+      opacity: 0.2;
+      pointer-events: none; /* Znak wodny nie blokuje interakcji */
+      z-index: 0; /* Za treścią */
+    }
+  
+    /* Treść sekcji na wyższym z-index, aby była czytelna */
+    > * {
+      position: relative;
+      z-index: 1;
+    }
+  }
